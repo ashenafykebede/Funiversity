@@ -19,7 +19,9 @@ public enum Role {
     )),
     PROFESSOR(newArrayList(
             GET_ALL_PROFESSORS,
-            REGISTER_PROFESSOR
+            UPDATE_PROFESSOR,
+            DELETE_A_PROFESSOR,
+            GET_A_PROFESSOR
     ));
     private final List<Feature> featureList;
 

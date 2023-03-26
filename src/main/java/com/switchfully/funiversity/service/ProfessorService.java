@@ -2,8 +2,9 @@ package com.switchfully.funiversity.service;
 
 import com.switchfully.funiversity.domain.Professor;
 import com.switchfully.funiversity.domain.ProfessorRepository;
+import com.switchfully.funiversity.webapi.dto.AddProfessorDTO;
 import com.switchfully.funiversity.webapi.dto.ProfessorDTO;
-import com.switchfully.funiversity.webapi.dto.ProfessorMapper;
+import com.switchfully.funiversity.webapi.dto.UpdateProfessorDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public class ProfessorService {
         this.professorMapper = profMapper;
     }
 
-    public ProfessorDTO save(ProfessorDTO professorToSave) {
-        Professor professor = professorMapper.toDomain(professorToSave);
+    public ProfessorDTO save(AddProfessorDTO addProfessorDTO) {
+        Professor professor = professorMapper.toDomain(addProfessorDTO);
         return professorMapper.toDTO(professorRepository.save(professor));
     }
 
@@ -32,8 +33,8 @@ public class ProfessorService {
     public ProfessorDTO getProfessorById(String id) {
         return professorMapper.toDTO(professorRepository.getProfessorById(id));
     }
-    public ProfessorDTO updateProfessorById(ProfessorDTO newProfDataDTO, String id) {
-            var newProfData= professorMapper.toDomain(newProfDataDTO);
+    public ProfessorDTO updateProfessorById(UpdateProfessorDTO updateProfessorDTO, String id) {
+            var newProfData= professorMapper.toDomain(updateProfessorDTO);
             var updatedProf = professorRepository.updateProfessor(id,newProfData);
 
        return professorMapper.toDTO(updatedProf);

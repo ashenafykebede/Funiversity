@@ -1,6 +1,9 @@
 package com.switchfully.funiversity.domain;
 
+import org.slf4j.Logger;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
@@ -9,13 +12,13 @@ import static com.switchfully.funiversity.domain.Role.PRESIDENT;
 
 @Repository
 public class ProfessorRepository {
+    private Logger logger;
     private final ConcurrentHashMap<String, Professor> professorsDatabase;
     private static final Professor president = new Professor(
             "John",
             "Smith",
             "president@funiversity.com",
-            "fun123",
-            PRESIDENT
+            "fun123"
     );
 
     public ProfessorRepository() {
@@ -55,6 +58,6 @@ public class ProfessorRepository {
         if (optionalProf.isPresent()) {
             return optionalProf.get().getValue();
         }
-        throw new RuntimeException("professor not found");
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Email is not recognized");
     }
 }

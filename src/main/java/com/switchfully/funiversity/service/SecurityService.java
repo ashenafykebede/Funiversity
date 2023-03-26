@@ -1,8 +1,9 @@
-package com.switchfully.funiversity.service.security;
+package com.switchfully.funiversity.service;
 
 import com.switchfully.funiversity.domain.Feature;
 import com.switchfully.funiversity.domain.Professor;
 import com.switchfully.funiversity.domain.ProfessorRepository;
+import com.switchfully.funiversity.service.security.Credential;
 import com.switchfully.funiversity.webapi.exceptions.AccessLevelException;
 import com.switchfully.funiversity.webapi.exceptions.PasswordDoesntMatchException;
 import org.springframework.stereotype.Service;
@@ -22,17 +23,15 @@ public class SecurityService {
         if (!professor.isCorrectPassword(credential.getPassword())) {
             throw new PasswordDoesntMatchException("Password is not correct");
         }
-//        login(credential);
         if (!professor.hasAccessTo(feature)){
             throw new AccessLevelException("You have no access to perform this operation !");
         }
     }
     private Credential decodeAuth(String authorization) {
-        String decodedCredential = new String(Base64.getDecoder().decode(authorization.substring("Basic ".length())));
-        String username = decodedCredential.substring(0,decodedCredential.indexOf("-"));
-        String password = decodedCredential.substring(decodedCredential.indexOf("-")+1);
-
-        return new Credential(username,password);
+        String decodedAuthorization = new String(Base64.getDecoder().decode(authorization.substring("Basic ".length())));
+        String email = decodedAuthorization.substring(0,decodedAuthorization.indexOf(":"));
+        String password = decodedAuthorization.substring(decodedAuthorization.indexOf(":")+1);
+        return new Credential(email,password);
     }
 }
 

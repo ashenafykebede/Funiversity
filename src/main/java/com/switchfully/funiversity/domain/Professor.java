@@ -11,13 +11,13 @@ public class Professor {
     private final String password;
     private final Role role;
 
-    public Professor(String firstName, String lastName, String email, String password, Role role) {
+    public Professor(String firstName, String lastName, String email, String password) {
         this.id = UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.role = Role.PROFESSOR;
     }
 
     public String getId() {

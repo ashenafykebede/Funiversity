@@ -1,9 +1,11 @@
 package com.switchfully.funiversity.webapi;
 
 import com.switchfully.funiversity.domain.Feature;
-import com.switchfully.funiversity.service.security.SecurityService;
+import com.switchfully.funiversity.service.SecurityService;
 import com.switchfully.funiversity.service.ProfessorService;
+import com.switchfully.funiversity.webapi.dto.AddProfessorDTO;
 import com.switchfully.funiversity.webapi.dto.ProfessorDTO;
+import com.switchfully.funiversity.webapi.dto.UpdateProfessorDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -25,9 +27,8 @@ public class ProfessorController {
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public ProfessorDTO save(@RequestBody ProfessorDTO professorDTO,@RequestHeader String authorization) {
-        securityService.validateCredentials(authorization,Feature.REGISTER_PROFESSOR);
-        return professorService.save(professorDTO);
+    public ProfessorDTO addAProfessor(@RequestBody AddProfessorDTO addProfessorDTO, @RequestHeader String authorization) {
+        return professorService.save(addProfessorDTO);
     }
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
@@ -35,9 +36,9 @@ public class ProfessorController {
         return professorService.getAllProfessors();
     }
     @PutMapping(consumes ="application/json",produces ="application/json" ,path = "{id}")
-    public ProfessorDTO updateProf(@RequestBody ProfessorDTO profToUpdate, @PathVariable String id,@RequestHeader String authorization){
+    public ProfessorDTO updateProf(@RequestBody UpdateProfessorDTO updateProfessorDTO, @PathVariable String id, @RequestHeader String authorization){
         securityService.validateCredentials(authorization,Feature.UPDATE_PROFESSOR);
-        return professorService.updateProfessorById(profToUpdate,id);
+        return professorService.updateProfessorById(updateProfessorDTO,id);
     }
 
     @GetMapping(path = "{id}")
