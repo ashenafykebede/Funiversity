@@ -1,12 +1,15 @@
 package com.switchfully.funiversity.domain;
 
+import com.switchfully.funiversity.domain.professor.Professor;
+import com.switchfully.funiversity.domain.professor.ProfessorRepository;
+import com.switchfully.funiversity.domain.professor.Role;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 
 class ProfessorRepositoryTest {
-    private static final  Professor prof_koen = new Professor("Koen", "Van Ramsi","koen@funiversity.com","fun123", Role.PROFESSOR);
+    private static final Professor prof_koen = new Professor("Koen", "Van Ramsi","koen@funiversity.com","fun123", Role.PROFESSOR);
     private static final Professor prof_janssen = new Professor("Eric","Janssen","Janssen@funiversity.com","fun123", Role.PROFESSOR);
    private static final ProfessorRepository professorRepository = new ProfessorRepository();
 

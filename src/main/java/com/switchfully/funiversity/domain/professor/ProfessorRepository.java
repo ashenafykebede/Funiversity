@@ -1,4 +1,4 @@
-package com.switchfully.funiversity.domain;
+package com.switchfully.funiversity.domain.professor;
 
 import org.slf4j.Logger;
 import org.springframework.http.HttpStatus;
@@ -7,8 +7,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
-
-import static com.switchfully.funiversity.domain.Role.PRESIDENT;
 
 @Repository
 public class ProfessorRepository {

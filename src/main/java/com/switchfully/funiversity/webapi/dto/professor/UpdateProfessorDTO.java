@@ -1,12 +1,12 @@
-package com.switchfully.funiversity.webapi.dto;
+package com.switchfully.funiversity.webapi.dto.professor;
 
-public class AddProfessorDTO {
+public class UpdateProfessorDTO {
     private final String firstName;
     private final String lastName;
     private final String email;
     private final String password;
 
-    public AddProfessorDTO(String firstName, String lastName, String email, String password) {
+    public UpdateProfessorDTO(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

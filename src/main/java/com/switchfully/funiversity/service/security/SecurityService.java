@@ -1,8 +1,8 @@
-package com.switchfully.funiversity.service;
+package com.switchfully.funiversity.service.security;
 
-import com.switchfully.funiversity.domain.Feature;
-import com.switchfully.funiversity.domain.Professor;
-import com.switchfully.funiversity.domain.ProfessorRepository;
+import com.switchfully.funiversity.domain.professor.Feature;
+import com.switchfully.funiversity.domain.professor.Professor;
+import com.switchfully.funiversity.domain.professor.ProfessorRepository;
 import com.switchfully.funiversity.service.security.Credential;
 import com.switchfully.funiversity.webapi.exceptions.AccessLevelException;
 import com.switchfully.funiversity.webapi.exceptions.PasswordDoesntMatchException;

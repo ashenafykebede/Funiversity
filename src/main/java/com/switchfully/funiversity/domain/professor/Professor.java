@@ -1,4 +1,4 @@
-package com.switchfully.funiversity.domain;
+package com.switchfully.funiversity.domain.professor;
 
 import java.util.Objects;
 import java.util.UUID;

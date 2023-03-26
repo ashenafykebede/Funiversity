@@ -1,10 +1,10 @@
-package com.switchfully.funiversity.service;
+package com.switchfully.funiversity.service.professor;
 
-import com.switchfully.funiversity.domain.Professor;
-import com.switchfully.funiversity.domain.ProfessorRepository;
-import com.switchfully.funiversity.webapi.dto.AddProfessorDTO;
-import com.switchfully.funiversity.webapi.dto.ProfessorDTO;
-import com.switchfully.funiversity.webapi.dto.UpdateProfessorDTO;
+import com.switchfully.funiversity.domain.professor.Professor;
+import com.switchfully.funiversity.domain.professor.ProfessorRepository;
+import com.switchfully.funiversity.webapi.dto.professor.AddProfessorDTO;
+import com.switchfully.funiversity.webapi.dto.professor.ProfessorDTO;
+import com.switchfully.funiversity.webapi.dto.professor.UpdateProfessorDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

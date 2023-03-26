@@ -1,4 +1,4 @@
-package com.switchfully.funiversity.domain;
+package com.switchfully.funiversity.domain.professor;
 
 public enum Feature {
     ADD_PROFESSOR,

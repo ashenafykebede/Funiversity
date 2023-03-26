@@ -1,11 +1,9 @@
-package com.switchfully.funiversity.domain;
-
-import com.switchfully.funiversity.domain.Feature;
+package com.switchfully.funiversity.domain.professor;
 
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
-import static com.switchfully.funiversity.domain.Feature.*;
+import static com.switchfully.funiversity.domain.professor.Feature.*;
 
 public enum Role {
     PRESIDENT(newArrayList(

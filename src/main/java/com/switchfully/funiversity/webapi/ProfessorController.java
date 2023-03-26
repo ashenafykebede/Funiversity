@@ -1,11 +1,11 @@
 package com.switchfully.funiversity.webapi;
 
-import com.switchfully.funiversity.domain.Feature;
-import com.switchfully.funiversity.service.SecurityService;
-import com.switchfully.funiversity.service.ProfessorService;
-import com.switchfully.funiversity.webapi.dto.AddProfessorDTO;
-import com.switchfully.funiversity.webapi.dto.ProfessorDTO;
-import com.switchfully.funiversity.webapi.dto.UpdateProfessorDTO;
+import com.switchfully.funiversity.domain.professor.Feature;
+import com.switchfully.funiversity.service.security.SecurityService;
+import com.switchfully.funiversity.service.professor.ProfessorService;
+import com.switchfully.funiversity.webapi.dto.professor.AddProfessorDTO;
+import com.switchfully.funiversity.webapi.dto.professor.ProfessorDTO;
+import com.switchfully.funiversity.webapi.dto.professor.UpdateProfessorDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

@@ -1,23 +1,16 @@
-package com.switchfully.funiversity.webapi.dto;
+package com.switchfully.funiversity.webapi.dto.professor;
 
-import com.switchfully.funiversity.domain.ProfessorRepository;
-import com.switchfully.funiversity.domain.Role;
-
-public class ProfessorDTO {
-    private final String id;
+public class AddProfessorDTO {
     private final String firstName;
     private final String lastName;
     private final String email;
+    private final String password;
 
-    public ProfessorDTO(String id, String firstName, String lastName, String email) {
-        this.id = id;
+    public AddProfessorDTO(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-    }
-
-    public String getId() {
-        return id;
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -32,4 +25,7 @@ public class ProfessorDTO {
         return email;
     }
 
+    public String getPassword() {
+        return password;
+    }
 }
