@@ -9,8 +9,8 @@ import org.junit.jupiter.api.Test;
 import java.util.UUID;
 
 class ProfessorRepositoryTest {
-    private static final Professor prof_koen = new Professor("Koen", "Van Ramsi","koen@funiversity.com","fun123", Role.PROFESSOR);
-    private static final Professor prof_janssen = new Professor("Eric","Janssen","Janssen@funiversity.com","fun123", Role.PROFESSOR);
+    private static final Professor prof_koen = new Professor("Koen", "Van Ramsi","koen@funiversity.com","fun123");
+    private static final Professor prof_janssen = new Professor("Eric","Janssen","Janssen@funiversity.com","fun123");
    private static final ProfessorRepository professorRepository = new ProfessorRepository();
 
     @Test
@@ -30,7 +30,7 @@ class ProfessorRepositoryTest {
         //Given professors
 
         //when
-        Professor professorY = new Professor("Funny","Professor","fun@funiversity.com","fun123",Role.PROFESSOR);
+        Professor professorY = new Professor("Funny","Professor","fun@funiversity.com","fun123");
         professorRepository.save(prof_koen);
         professorRepository.save(prof_janssen);
         professorRepository.save(professorY);

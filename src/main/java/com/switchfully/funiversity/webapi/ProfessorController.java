@@ -27,7 +27,7 @@ public class ProfessorController {
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public ProfessorDTO addAProfessor(@RequestBody AddProfessorDTO addProfessorDTO, @RequestHeader String authorization) {
+    public ProfessorDTO addAProfessor(@RequestBody AddProfessorDTO addProfessorDTO) {
         return professorService.save(addProfessorDTO);
     }
     @GetMapping(produces = "application/json")

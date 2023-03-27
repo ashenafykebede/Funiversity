@@ -1,5 +1,7 @@
 package com.switchfully.funiversity.domain.professor;
 
+import jakarta.validation.constraints.NotNull;
+
 import java.util.Objects;
 import java.util.UUID;
 
